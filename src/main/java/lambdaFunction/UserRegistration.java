@@ -1,14 +1,5 @@
 package lambdaFunction;
 
-/*
- *  UC8- As a User need to follow pre-defined Password rules.
- * Rule1– minimum 8 Characters 
- * Rule2- Should have at least 1 Upper Case
- * Rule3- Should have at least 1 numeric number in the password
- * Rule4- Should have at Exactly 1 Special Character in the password
- * NOTE – All rules must be passed
- */
-
 public class UserRegistration {
 	/*
 	 * created method checkFName and passing parameter in this it will check

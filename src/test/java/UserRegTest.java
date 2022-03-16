@@ -3,15 +3,9 @@ import org.junit.Test;
 
 import lambdaFunction.UserRegistration;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-/*
- * 
 /**
- * UC3- As a User need to enter a valid email 
- * -E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl& co)
- *
+ * UC4- As a User need to enter a valid phonenumber
+ * Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
  */
 public class UserRegTest {
 
@@ -70,5 +64,28 @@ public class UserRegTest {
 
 	public boolean checkEmail(String emailID) {
 		return (emailID.matches("^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*[@][0-9A-Za-z]+([.][a-zA-Z]{2,4})*$"));
+	}
+
+        /*
+	 * Created method for Phonenum and its type whether Phonenum is valid or not
+	 */
+public void testPhoneNumber_MustReturnTrue() {
+		UserRegistration userRegistration = new UserRegistration();
+		/**
+		 * calling checkPhoneNum method to see phoneNumber is valid
+		 */
+		boolean isPhoneNumberValid = userRegistration.checkPhoneNum("91 7903990740");
+		Assert.assertTrue(isPhoneNumberValid);
+	}
+
+	@Test
+	/**
+	 * created testPhoneNumber_MustReturnFalse() for False condition
+	 */
+	public void testPhoneNumber_MustReturnFalse() {
+		UserRegistration userRegistration = new UserRegistration();
+		boolean isPhoneNumberInValid = userRegistration.checkPhoneNum("7903990740");
+		Assert.assertFalse(isPhoneNumberInValid);
+	
 	}
 }
